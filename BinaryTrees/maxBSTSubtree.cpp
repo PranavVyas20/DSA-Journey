@@ -29,7 +29,7 @@ mPair maxBSTSubtreeSize(binaryTreeNode* root){
     // Checking if the current node is a bst as a tree
                     && (root->data >= leftPair.max && root->data <= rightPair.min);
     // Returning the min and max of the current node as the parent node will be needing it to further calculate
-    // the reslut
+    // the result
       
     ans.min = min(root->data,min(leftPair.min,rightPair.min));
     ans.max = max(root->data,max(leftPair.max,rightPair.max));
@@ -42,7 +42,7 @@ mPair maxBSTSubtreeSize(binaryTreeNode* root){
     else if (leftPair.size > rightPair.size){
         // Now how do we know that left pair was a bst ?
 
-        // Because agar wo bst ni hota to line 33 execute hoti.
+        // Because agar wo bst ni hota to line 37 execute hoti.
         // All in all if the current node is not bst then we always have the size of the previous bst!
         // Thanks to recursion
         ans.size = leftPair.size;

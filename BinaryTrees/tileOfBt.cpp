@@ -3,8 +3,7 @@ using namespace std;
 #include <bits/stdc++.h>
 #include "BinaryTree.h"
 
-class mPair
-{
+class mPair{
 public:
     int sum;
     int tilt;
@@ -15,17 +14,17 @@ public:
 };
 
 // Pair class method
-mPair findTiltHelper(binaryTreeNode *root){
-    if(root == NULL){
+mPair findTiltHelper(binaryTreeNode *node){
+    if(node == NULL){
         mPair bPair(0,0);
         return bPair;
     }
-    mPair leftPair = findTiltHelper(root->left);
-    mPair rightPair = findTiltHelper(root->right);
+    mPair leftPair = findTiltHelper(node->left);
+    mPair rightPair = findTiltHelper(node->right);
 
-    int rootTilt = abs(leftPair.sum - rightPair.sum) + leftPair.tilt + rightPair.tilt;
-    int rootSum = leftPair.sum+rightPair.sum+root->data;
-    mPair mainPair(rootSum,rootTilt);
+    int nodeTilt = abs(leftPair.sum - rightPair.sum) + leftPair.tilt + rightPair.tilt;
+    int nodeSum = leftPair.sum+rightPair.sum+node->data;
+    mPair mainPair(nodeSum,nodeTilt);
     return mainPair;
 
 }
@@ -47,6 +46,5 @@ int findTiltReturnSum(binaryTreeNode *root)
 
 int main()
 {
-    cout << abs(3 - 4);
 }
 

@@ -23,8 +23,12 @@ mPair isBST(binaryTreeNode * root){
     }
     mPair leftPair = isBST(root->left);
     mPair rightPair = isBST(root->right);
+
     bool ans_isBST = (leftPair.isBst && rightPair.isBst) 
-    && (root->data > leftPair.m_max && root->data < rightPair.m_min);
+            && (root->data > leftPair.m_max && root->data < rightPair.m_min);
+
+// Why do we need to calculate min and max of ours? 
+// because we may be the left child or maybe the right child of our parent node.
     int ans_max = max(root->data,max(leftPair.m_max,rightPair.m_max));
     int ans_min = min(root->data,min(leftPair.m_min,rightPair.m_min));
     mPair ans(ans_max,ans_min,ans_isBST);

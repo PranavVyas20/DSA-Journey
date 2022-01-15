@@ -3,6 +3,7 @@ using namespace std;
 #include<bits/stdc++.h>
 #include"BinaryTree.h"
 
+// Same exactly as maxBSTSubtree.
 class mPair{
     public:
     int m_min;
