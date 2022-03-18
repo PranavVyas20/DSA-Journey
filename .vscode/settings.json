@@ -1,5 +1,12 @@
 {
     "files.associations": {
-        "iostream": "cpp"
-    }
+        "iostream": "cpp"},
+
+        "editor.fontFamily": "Ubuntu Mono",
+  "vscode_custom_css.imports":
+    [
+      "file:///Users/pranav/Documents/vscodecustom.css"
+    ],
+    "C_Cpp.errorSquiggles": "Disabled"
+
 }
